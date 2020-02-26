@@ -1,4 +1,5 @@
 import Cantidad from "./cantidad.js";
+import Ingrediente from "./ingrediente.js"
 
 class Main {
     probarCantidad() {
@@ -7,7 +8,14 @@ class Main {
         console.log(`${receta.getDescripcion()}`)
         
     }
+    probarIngrediente() {
+        console.log(`-----Ingrediente-----`)
+        let ingrediente = new Ingrediente("Leche", new Cantidad(2, "Litros"), 20)
+        console.log(`${ingrediente.getDescripcionIng()}`)
+    }
+
 }
 
 let app = new Main
 app.probarCantidad();
+app.probarIngrediente();
