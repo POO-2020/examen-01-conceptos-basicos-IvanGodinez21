@@ -8,7 +8,6 @@ export default class Receta {
         this.ingredientes.push(ingrediente)
     }
     listarIngredientes() {
-        console.log("-----Ingredientes-----")
         this.ingredientes.forEach((ingrediente, i) => {
             console.log(`${i+1}. ${ingrediente.getDescripcionIng()}`)
         })
@@ -17,11 +16,13 @@ export default class Receta {
         return `Numero de Ingredientes: ${this.ingredientes.length}`
     }
     getCosto() {
-        return `Costo: ${this.ingredientes}`
+        let costo = this.ingredientes[0].costo + this.ingredientes[1].costo
+        return `Costo total: $${costo}`
         
     }
     imprimirEnConsola() {
-        return `${this.nombre}\nAutor: ${this.autor}\nIngredientes: \n${this.ingredientes[0].getDescripcionIng()} \n${this.ingredientes[1].getDescripcionIng()}`
+        let costo = this.ingredientes[0].costo + this.ingredientes[1].costo
+        return `${this.nombre}\nAutor: ${this.autor}\nIngredientes: \n${this.ingredientes[0].getDescripcionIng()} \n${this.ingredientes[1].getDescripcionIng()} \nCosto total: $${costo}`
 
     }
 }
